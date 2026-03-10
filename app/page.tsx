@@ -2,9 +2,9 @@
 
 import React from "react";
 
-import Hero from "./Components/Ctas/Hero";
-import Cards from "./Components/Util/_CardsN";
-import Faq from "./Components/Content/Faq";
+import Hero from "@/app/components/Hero";
+import { ServiceList } from "@/app/components/ServiceList";
+
 
 const cards = [
   {

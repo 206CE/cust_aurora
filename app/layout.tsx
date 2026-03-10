@@ -2,11 +2,11 @@
 
 import "./globals.css";
 
-import Navigation from "./Components/Nav/Navigation";
-import Logo from "./Components/Content/Logo";
-import Cta from "./Components/Ctas/Cta";
+import {Navigation} from "@/app/components/Navigation";
+import {Logo} from "@/app/components/Logo";
 
-/* import Social from "./Components/Social"; */
+
+import { Social } from "@/app/components/Social"; 
 
 //Change font
 import { Geist, Geist_Mono } from "next/font/google";
@@ -74,7 +74,8 @@ export default function RootLayout({
         <header className="flex flex-wrap items-center justify-between p-5  gap-10 text-(--text-primary)">
           <div className="">
             <Logo
-              imagePath="/logo.png"
+            compStyling=""
+              imgPath="/logo.png"
               size={40}
               text="AURORA"
               href="/Contact"
