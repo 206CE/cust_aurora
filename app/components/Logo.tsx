@@ -36,7 +36,7 @@ export function Logo({
             style={{ width: size, height: size }}
             priority
           />
-          <span className='md:hidden lg:block'>{text}</span>
+          <span className=' lg:block'>{text}</span>
         </div>
       </Link>
     </div>

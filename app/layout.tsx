@@ -10,6 +10,8 @@ import { Social } from "@/app/components/Social";
 
 //Change font
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
+import { CopyRight } from "./components";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -70,11 +72,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-
-        <header className="flex flex-wrap items-center justify-between p-5  gap-10 text-(--text-primary)">
-          <div className="">
+        <header className="flex items-center justify-between px-5  gap-10 text-(--text-primary)">
+          <div className="mt-6">
             <Logo
-            compStyling=""
+              compStyling=""
               imgPath="/logo.png"
               size={40}
               text="AURORA"
@@ -83,44 +84,31 @@ export default function RootLayout({
           </div>
 
           {/* Desktop Navbar */}
-          <div className="grow ml-20 ">
-            <Navigation
-              items={items}
-              itemClassName=" btn p-2 border rounded-lg"
-            />
+          <div className="">
+            <Navigation items={items} />
           </div>
 
           {/* CTA Link - shown on medium and up */}
           <div className="hidden lg:inline   ">
-            <Cta ctas={[{label:'Get a free quote',href:'/Contact'}]} itemClassFormat="btn p-2 border rounded-lg"/>
-
+            <div>
+              <Link className="btn p-2 border rounded-lg" href={'/Contact'}>
+                <h2>Get a free quote</h2>
+                
+              </Link>
+            </div>
           </div>
         </header>
 
         {children}
 
-        <footer className="flex flex-wrap items-center justify-between p-4 gap-4">
-          <div className="shrink-0 button">
-            <Logo
-              imagePath="/logo.png"
-              size={40}
-              text="AURORA"
-              href="/Contact"
-            />
-            <span className="text-sm">Enlighten your tax worries.</span>
-          </div>
+        <footer className="flex-col items-center justify-between p-4 gap-4">
+          <Social urls={['']} />
           <div className="hidden md:block grow text-center ml-20">
             <Navigation
               items={items}
-              itemClassName="btn p-2 border rounded-lg "
             />
           </div>
-          <div className="mr-20">
-
-            {/* Dont have social media yet.
-            
-            <Social urls={["xxx", "xxx"]} />*/}
-          </div>
+          <CopyRight />
         </footer>
       </body>
     </html>

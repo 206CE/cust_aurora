@@ -9,7 +9,7 @@ import { ServiceList } from "@/app/components/ServiceList";
 const cards = [
   {
     id:1,
-    name: "Tax Services",
+    title: "Tax Services",
     subName: "Compliance, audits, debt relief, and strategic tax planning.",
     description: [
       "Income Tax Returns",
@@ -22,7 +22,7 @@ const cards = [
   },
   {
     id:2,
-    name: "Accounting & Bookkeeping",
+    title: "Accounting & Bookkeeping",
     subName: "Accurate financial records and reporting for businesses.",
     description: [
       "Monthly Bookkeeping",
@@ -35,7 +35,7 @@ const cards = [
   },
   {
     id:3,
-    name: "Corporate Secretarial & CIPC",
+    title: "Corporate Secretarial & CIPC",
     subName: "Company registrations, compliance, and governance support.",
     description: [
       "Company/CC Registrations",
@@ -48,7 +48,7 @@ const cards = [
   },
   {
     id:4,
-    name: "Audit & Assurance",
+    title: "Audit & Assurance",
     subName: "Statutory and forensic audits for transparency.",
     description: [
       "Financial Statement Audits",
@@ -61,7 +61,7 @@ const cards = [
   },
   {
     id:5,
-    name: "Payroll & HR Compliance",
+    title: "Payroll & HR Compliance",
     subName: "End-to-end payroll processing and statutory reporting.",
     description: [
       "Salary Structuring",
@@ -74,7 +74,7 @@ const cards = [
   },
   {
     id:6,
-    name: "Specialized Services",
+    title: "Specialized Services",
     subName: "Tailored solutions for unique needs.",
     description: [
       "BEE Certificates (Under R10M)",
@@ -136,10 +136,10 @@ export default function Home() {
         />
       </section>
       <section className="flex max-w-auto">
-        <Cards cards={cards} />
+        <ServiceList services={cards} />
       </section>
       <section>
-        <Faq faqs={faqs} />
+
       </section>
     </main>
   );

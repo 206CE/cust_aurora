@@ -1,4 +1,4 @@
-import Contacts from "@/app/Components/Api/Contacts";
+import Contacts from "@/app/components/Contacts";
 
 export default function Contact() {
     return (<div className=""><Contacts /></div>);

@@ -37,7 +37,7 @@ export function ServiceList({
     }[columns] || 'grid-cols-1';
 
   return (
-    <section className='p-8 text-[var(--text-primary)]'>
+    <section className='p-8 text-(--text-primary)'>
       {/* Heading Container */}
       {(heading || subheading) && (
         <div className='text-center mb-12'>
@@ -47,7 +47,7 @@ export function ServiceList({
             </h2>
           )}
           {subheading && (
-            <p className='text-lg text-[var(--text-secondary)] mt-4 max-w-2xl mx-auto'>
+            <p className='text-lg text-(--text-secondary) mt-4 max-w-2xl mx-auto'>
               {subheading}
             </p>
           )}
@@ -64,8 +64,8 @@ export function ServiceList({
           <article
             key={idx}
             className={`
-              p-8 border border-[var(--border)] shadow-sm hover:shadow-xl 
-              transition-all duration-300 bg-[var(--bg-secondary)] rounded-xl
+              p-8 border  shadow-sm hover:shadow-xl 
+              transition-all duration-300 bg-(--bg-secondary) rounded-xl
               flex flex-col items-center text-center group
               ${itemStyle}
             `}
@@ -93,7 +93,7 @@ function ServiceContent({ service }: { service: ServiceItem }) {
   return (
     <>
       {service.icon && (
-        <div className='mb-6 text-[var(--text-primary)] group-hover:scale-110 transition-transform duration-300'>
+        <div className='mb-6 text-(--text-primary) group-hover:scale-110 transition-transform duration-300'>
           {service.icon}
         </div>
       )}
@@ -117,7 +117,7 @@ function ServiceContent({ service }: { service: ServiceItem }) {
       )}
 
       {service.description && (
-        <p className='text-[var(--text-secondary)] text-sm leading-relaxed max-w-xs'>
+        <p className='text-(--text-secondary) text-sm leading-relaxed max-w-xs'>
           {service.description}
         </p>
       )}

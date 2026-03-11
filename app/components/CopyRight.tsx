@@ -12,7 +12,7 @@ export function CopyRight() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <footer className='p-6 border-t border-(--border) '>
+    <footer className='p-6 border-t border '>
       <div className='flex items-center gap-2 justify-center text-(--text-secondary) text-xs tracking-widest uppercase glow-text'>
         <p className=''>&copy; 2026 CE206</p>
         
