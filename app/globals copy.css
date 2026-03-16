@@ -1,248 +1,123 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
+@import 'tailwindcss';
 
-@custom-variant dark (&:is(.dark *));
+/* ==========================================================================
+   1. Basic Color Pallet
+   ================================================*/
 
 :root {
-  /* Backgrounds/Surfaces */           /* Deep Space Black */
-  --surface: ;              /* Dark Steel Panel */
-
-  --bg-primary: #0A0A10;
-  --bg-secondary: #12121D;
-  --bg-tertiary: #1C1C27;
-  --bg-hover: ;
-  --bg-inverted: ;
-  --bg-overlay: ;
-
-  /* === Borders & Dividers === */
-  --border:oklch(0.922 0 0);
-  --divider: rgba(255, 255, 255, 0.05);
-
-  /* === Glows & Effects === */
-  --glow-sun: rgba(255, 107, 53, 0.4);
-  --glow-tech: rgba(79, 131, 202, 0.3);
-  --glass-overlay: rgba(255, 255, 255, 0.05); /* Futuristic glass effect */
-
-  /* Brand Colors */
-
-  --sun-core: #FF3E3E;             /* Red-Hot Core */
-  --sun-inner-glow: #FF6B35;       /* Orange Plasma */
-  --sun-outer-glow: #FFD166;       /* Solar Flare Yellow */
-
-  --tech-panel: ;           /* Matte Black Alloy */
-  --tech-accent: #4F83CA;          /* High-Energy Blue */
-  --tech-hologram: #7DB9E8;        /* Holo-Cyan Glow */
-  --tech-wire: #F2E205;            /* Energy Conduit Gold */
-
-  --primary:oklch(0.205 0 0);
-
-  --primary-light: ;
-  --primary-dark: ;
-
-  --secondary:oklch(0.97 0 0);
-
-  --secondary-light: ;
-  --secondary-dark: ;
-
-  --tertiary: ;
-
-  --tertiary-light: ;
-  --tertiary-dark: ;
-
-  --accent:oklch(0.97 0 0);
-
-  --accent-light: ;
-  --accent-dark: ;
-
-  /* Feedback colors */
-
-    --success: #7ED321;              /* Green = System Stable */
-    --warning: #FFA700;              /* Warning / Caution Mode */
-    --error: #FF3B30;                /* Error / Critical Alert */
-    --info: ;
-
-    /* Typography */
-
-  --text-primary: #FFFFFF;
-  --text-secondary: #AAAAAA;
-  --text-tertiary: #666666;
-  --text-disabled: ;
-  --text-inverted: ;
-  --text-link: ;
-  --text-link-hover: ;
-
-/* Interactive Elements */
-
-    /* === Hover States & Variants === */
-  --primary-hover: #E6B95C;
-  --secondary-hover: #3D6BC0;
-  --accent-hover: #E05A2C;
-  /* === UI & Interactive Elements === */
-  --primary: #FFD166;              /* Main UI Highlight (Solar Yellow) */
-  --secondary: #4F83CA;            /* Secondary UI (Plasma Blue) */
-  --accent: #FF6B35;               /* Accent UI (Flame Orange) */
-
-  --btn-bg: var(--color-primary);
-  --btn-text: var(--color-white);
-  --btn-hover-bg: var(--color-primary-dark);
-  --btn-disabled-bg: var(--color-gray-300);
-  --btn-disabled-text: var(--color-gray-500);
-
-  --input-bg: var(--color-white);
-  --input-border: var(--color-gray-300);
-  --input-focus: var(--color-primary);
-  --input-placeholder: var(--color-gray-400);
-  --background:oklch(1 0 0);
-  --foreground:oklch(0.145 0 0);
-  --card:oklch(1 0 0);
-  --card-foreground:oklch(0.145 0 0);
-  --popover:oklch(1 0 0);
-  --popover-foreground:oklch(0.145 0 0);
-  --primary-foreground:oklch(0.985 0 0);
-  --secondary-foreground:oklch(0.205 0 0);
-  --muted:oklch(0.97 0 0);
-  --muted-foreground:oklch(0.556 0 0);
-  --accent-foreground:oklch(0.205 0 0);
-  --destructive:oklch(0.58 0.22 27);
-  --input:oklch(0.922 0 0);
-  --ring:oklch(0.708 0 0);
-  --chart-1:oklch(0.809 0.105 251.813);
-  --chart-2:oklch(0.623 0.214 259.815);
-  --chart-3:oklch(0.546 0.245 262.881);
-  --chart-4:oklch(0.488 0.243 264.376);
-  --chart-5:oklch(0.424 0.199 265.638);
-  --radius:0.625rem;
-  --sidebar:oklch(0.985 0 0);
-  --sidebar-foreground:oklch(0.145 0 0);
-  --sidebar-primary:oklch(0.205 0 0);
-  --sidebar-primary-foreground:oklch(0.985 0 0);
-  --sidebar-accent:oklch(0.97 0 0);
-  --sidebar-accent-foreground:oklch(0.205 0 0);
-  --sidebar-border:oklch(0.922 0 0);
-  --sidebar-ring:oklch(0.708 0 0);
-
+  --bg-primary: #0a0a10;
+  --bg-secondary: #12121d;
+  --bg-tertiary: #141523;
+  --primary: #ffd166;
+  --secondary: #4f83ca;
+  --tertiary: #ff6b35;
+  --text-primary: #ffd166;
+  --text-secondary: var(--secondary);
+  --text-tertiary: var(--tertiary);
+  --border: rgba(255, 255, 255, 0.171);
+  --sidebar: hsl(0 0% 98%);
+  --sidebar-foreground: hsl(240 5.3% 26.1%);
+  --sidebar-primary: hsl(240 5.9% 10%);
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+  --sidebar-accent: hsl(240 4.8% 95.9%);
+  --sidebar-accent-foreground: hsl(240 5.9% 10%);
+  --sidebar-border: hsl(220 13% 91%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
 }
 
-.btn {
-  background-color: var(--bg-primary);
-  color:var(--primary);  
-  transition: transform 300ms ease;
-  transform: translate(0);
-}
+/* ==========================================================================
+   2. Global Styles and Background
+   ================================================*/
 
-.btn:hover {
-  color:var(--primar-hover);
-  transform: scale(1.10) translate(0);
-}
-
-.dark {
-  --background:oklch(0.145 0 0);
-  --surface: #12121D;
-  --glass-overlay: rgba(255, 255, 255, 0.05);
-
-  --sun-core: #FF3E3E;
-  --sun-inner-glow: #FF6B35;
-  --sun-outer-glow: #FFD166;
-
-  --tech-panel: #1C1C27;
-  --tech-accent: #4F83CA;
-  --tech-hologram: #7DB9E8;
-  --foreground:oklch(0.985 0 0);
-  --card:oklch(0.205 0 0);
-  --card-foreground:oklch(0.985 0 0);
-  --popover:oklch(0.205 0 0);
-  --popover-foreground:oklch(0.985 0 0);
-  --primary:oklch(0.87 0.00 0);
-  --primary-foreground:oklch(0.205 0 0);
-  --secondary:oklch(0.269 0 0);
-  --secondary-foreground:oklch(0.985 0 0);
-  --muted:oklch(0.269 0 0);
-  --muted-foreground:oklch(0.708 0 0);
-  --accent:oklch(0.371 0 0);
-  --accent-foreground:oklch(0.985 0 0);
-  --destructive:oklch(0.704 0.191 22.216);
-  --border:oklch(1 0 0 / 10%);
-  --input:oklch(1 0 0 / 15%);
-  --ring:oklch(0.556 0 0);
-  --chart-1:oklch(0.809 0.105 251.813);
-  --chart-2:oklch(0.623 0.214 259.815);
-  --chart-3:oklch(0.546 0.245 262.881);
-  --chart-4:oklch(0.488 0.243 264.376);
-  --chart-5:oklch(0.424 0.199 265.638);
-  --sidebar:oklch(0.205 0 0);
-  --sidebar-foreground:oklch(0.985 0 0);
-  --sidebar-primary:oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground:oklch(0.985 0 0);
-  --sidebar-accent:oklch(0.269 0 0);
-  --sidebar-accent-foreground:oklch(0.985 0 0);
-  --sidebar-border:oklch(1 0 0 / 10%);
-  --sidebar-ring:oklch(0.556 0 0);
-}
-
-@theme inline {
-  --font-sans:var(--font-sans);
-  --color-sidebar-ring:var(--sidebar-ring);
-  --color-sidebar-border:var(--sidebar-border);
-  --color-sidebar-accent-foreground:var(--sidebar-accent-foreground);
-  --color-sidebar-accent:var(--sidebar-accent);
-  --color-sidebar-primary-foreground:var(--sidebar-primary-foreground);
-  --color-sidebar-primary:var(--sidebar-primary);
-  --color-sidebar-foreground:var(--sidebar-foreground);
-  --color-sidebar:var(--sidebar);
-  --color-chart-5:var(--chart-5);
-  --color-chart-4:var(--chart-4);
-  --color-chart-3:var(--chart-3);
-  --color-chart-2:var(--chart-2);
-  --color-chart-1:var(--chart-1);
-  --color-ring:var(--ring);
-  --color-input:var(--input);
-  --color-border:var(--border);
-  --color-destructive:var(--destructive);
-  --color-accent-foreground:var(--accent-foreground);
-  --color-accent:var(--accent);
-  --color-muted-foreground:var(--muted-foreground);
-  --color-muted:var(--muted);
-  --color-secondary-foreground:var(--secondary-foreground);
-  --color-secondary:var(--secondary);
-  --color-primary-foreground:var(--primary-foreground);
-  --color-primary:var(--primary);
-  --color-popover-foreground:var(--popover-foreground);
-  --color-popover:var(--popover);
-  --color-card-foreground:var(--card-foreground);
-  --color-card:var(--card);
-  --color-foreground:var(--foreground);
-  --color-background:var(--background);
-  --radius-sm:calc(var(--radius) * 0.6);
-  --radius-md:calc(var(--radius) * 0.8);
-  --radius-lg:var(--radius);
-  --radius-xl:calc(var(--radius) * 1.4);
-  --radius-2xl:calc(var(--radius) * 1.8);
-  --radius-3xl:calc(var(--radius) * 2.2);
-  --radius-4xl:calc(var(--radius) * 2.6);
-
-}
-
-.hover-able {
-
-}
-
-.hover-able:hover {
-
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-
-  }
+   @layer base {
   body {
-    @apply bg-background text-foreground;
+    @apply  text-gray-200 min-h-screen;
+    background-image: url("/background.svg");
+    background-size: cover;
+    background-attachment: fixed;
 
+
+    :focus-visible {
+      @apply outline-none ring-2 ring-(--secondary) ring-offset-2 ring-offset-(--bg-primary);
+
+    }
+
+
+    a,
+    button,
+    select,
+    input, textarea {
+      @apply transition-all duration-300 ease-out;
+    }
   }
-  html {
-    @apply font-sans;
-
-  }
-
 }
+
+/* ==========================================================================
+   3. Navigation & Menu Components
+   ========================================================================== 
+   > Implement nav-link::after and nav-link-active
+   */
+
+@layer components {
+  .nav-link {
+    @apply  px-2 py-2.5 rounded-md text-(--text-primary) hover:text-(--text-secondary) hover:bg-white/5 relative  font-medium;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-1.5 left-4 right-4 h-0.5 bg-(--primary) scale-x-0 origin-right transition-transform duration-300 hover:scale-x-100;
+  }
+
+  .nav-link-active {
+    @apply text-(--primary) bg-white/10 font-semibold;
+  }
+
+  .menu-item {
+    @apply px-4 py-2.5 text-sm hover:bg-white/10 hover:text-(--primary) transition-colors rounded-md flex items-center gap-3;
+  }
+}
+
+/* ==========================================================================
+   4. Buttons (Primary / Secondary / Ghost / etc.)
+   ========================================================================== */
+
+@layer components {
+  .btn-primary {
+    @apply bg-linear-to-r from-(--primary) to-(--tertiary) text-black font-bold px-6 py-3 rounded-lg shadow-lg shadow-(--primary)/30 hover:shadow-(--primary)/50 hover:scale-105 active:scale-95 transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply border border-(--secondary) text-(--secondary) px-6 py-3 rounded-lg hover:bg-(--secondary)/10 hover:shadow-[0_0_20px_rgba(79,131,202,0.4)] transition-all duration-300;
+  }
+
+  .btn-ghost {
+    @apply text-gray-300 hover:text-white px-6 py-3 rounded-lg hover:bg-white/5 transition-all duration-300;
+  }
+}
+
+/* ==========================================================================
+   5. Utility Classes & Animations
+   ========================================================================== */
+
+@layer utilities {
+  .animate-skeleton {
+    @apply bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 bg-[length:200%_100%] animate-[pulse_1.5s_ease-in-out_infinite];
+  }
+
+  .input-focus {
+    @apply focus:ring-2 focus:ring-[var(--secondary)] focus:border-[var(--secondary)] focus:shadow-[0_0_15px_rgba(79,131,202,0.5)];
+  }
+}
+
+/* Interaction - Feedback */
+@layer utilities {
+  .animate-skeleton {
+    @apply bg-linear-to-r from-gray-800 via-gray-700 to-gray-800 bg-[length:200%_100%] animate-[pulse_1.5s_ease-in-out_infinite];
+  }
+
+  .input-focus {
+    @apply focus:ring-2 focus:ring-(--secondary) focus:border-(--secondary) focus:shadow-[0_0_15px_rgba(79,131,202,0.5)];
+  }
+}
+
+@custom-variant dark (&:is(.dark *));

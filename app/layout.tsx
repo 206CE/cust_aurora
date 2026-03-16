@@ -1,17 +1,7 @@
 
-
 import "./globals.css";
 
-import {Navigation} from "@/app/components/Navigation";
-import {Logo} from "@/app/components/Logo";
-
-
-import { Social } from "@/app/components/Social"; 
-
-//Change font
 import { Geist, Geist_Mono } from "next/font/google";
-import Link from "next/link";
-import { CopyRight } from "./components";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,13 +12,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-const items = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/About" },
-  { label: "Contact", href: "/Contact" },
-  
-];
 
 /* App router SEO  */
 export const metadata = {
@@ -61,6 +44,19 @@ export const metadata = {
   },
 };
 
+import {Navigation} from "@/app/components/Navigation";
+import {Logo} from "@/app/components/Logo";
+
+
+import { Social } from "@/app/components/Social"; 
+import { CopyRight } from "./components";
+
+const items = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/About" },
+  { label: "Contact", href: "/Contact" },
+  
+];
 
 export default function RootLayout({
   children,
@@ -72,8 +68,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="flex items-center justify-between px-5  gap-10 text-(--text-primary)">
-          <div className="mt-6">
+        <div className="flex p-2  px-5  gap-15 text-(--text-primary) border-b-2 border-(--border) items-center">
+          <div className="">
             <Logo
               compStyling=""
               imgPath="/logo.png"
@@ -88,16 +84,7 @@ export default function RootLayout({
             <Navigation items={items} />
           </div>
 
-          {/* CTA Link - shown on medium and up */}
-          <div className="hidden lg:inline   ">
-            <div>
-              <Link className="btn p-2 border rounded-lg" href={'/Contact'}>
-                <h2>Get a free quote</h2>
-                
-              </Link>
-            </div>
-          </div>
-        </header>
+        </div>
 
         {children}
 

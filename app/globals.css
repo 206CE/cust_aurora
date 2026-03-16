@@ -1,31 +1,30 @@
 @import "tailwindcss";
 
-
+/* ==========================================================================
+   1. Basic Color Pallet
+   ================================================*/
 
 :root {
 
-/* Backgrounds/Surfaces */
---bg-primary: #FFFFFF;      /* main page background */
---surface: #F8F8F8;      
---surface-hover: #E0E0E0;
-
-/* === Borders & Dividers === */
---border: #D3D3D3;          /**/
---divider: #EAEAEA;                  /**/
-
-/* Brand Colors */
+--bg-primary: #FFFFFF;      
+--bg-secondary: #F8F8F8;      
+--bg-tertiary: #E0E0E0;
 --primary: #0077C2;         /**/
+--secondary: #2B3A4F;                /**/
+--tertiary: #A0A0A0;                 /**/
+--text-primary: #2B3A4F;    /* main headings */
+--text-secondary: #5A6D83;  /**/
+--text-tertiary: #A0A0A0;            /**/
+--border: #D3D3D3;          /**/
+
+/* NON STANDARD*/
+--divider: #EAEAEA;                  /**/
 --primary-light: #4D9FDC;            /**/
 --primary-dark: #004F8A;             /**/
-
---secondary: #2B3A4F;                /**/
 --secondary-light: #5A6D83;          /**/
 --secondary-dark: #1A2534;           /**/
-
---tertiary: #A0A0A0;                 /**/
 --tertiary-light: #CCCCCC;           /**/
 --tertiary-dark: #7A7A7A;            /**/
-
 --accent: #E0E0E0;                   /**/
 --accent-light: #F0F0F0;             /**/
 --accent-dark: #B0B0B0;              /**/
@@ -37,9 +36,6 @@
 --info: #17A2B8;
 
 /* Typography */
---text-primary: #2B3A4F;    /* main headings */
---text-secondary: #5A6D83;  /**/
---text-tertiary: #A0A0A0;            /**/
 --text-disabled: #B0B0B0;            /**/
 --text-inverted: #FFFFFF;            /**/
 --text-link: #0077C2;                /**/
@@ -60,6 +56,56 @@
   
 }
 
+/* ==========================================================================
+   2. Global Styles and Background
+   ================================================*/
+
+   @layer base {
+  body {
+    @apply  text-gray-200 min-h-screen;
+    background-image: url("/background.svg");
+    background-size: cover;
+    background-attachment: fixed;
+
+
+    :focus-visible {
+      @apply outline-none ring-2 ring-(--secondary) ring-offset-2 ring-offset-(--bg-primary);
+
+    }
+
+
+    a,
+    button,
+    select,
+    input, textarea {
+      @apply transition-all duration-300 ease-out;
+    }
+  }
+}
+
+/* ==========================================================================
+   3. Navigation & Menu Components
+   ========================================================================== 
+   > Implement nav-link::after and nav-link-active
+   */
+
+@layer components {
+  /* <Navigation> */
+  .nav-link {
+    @apply px-2 py-2.5 bg-(--bg-primary) text-(--primary) hover:text-(--text-secondary) rounded-2xl  relative;
+  }
+  .nav-link::after {
+    content:'';
+    @apply bg-(--primary) text-(--bg-primary)
+  }
+  .nav-link-active {
+    @apply text-(--primary) bg-white/10 font-semibold;
+  }
+
+  .menu-item {
+    @apply px-4 py-2.5 text-sm hover:bg-white/10 hover:text-(--primary) transition-colors rounded-md flex items-center gap-3;
+  }
+}
 .btn {
   background-color: var(--btn-bg);
   color:var(--btn-text);  

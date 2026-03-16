@@ -15,7 +15,7 @@ interface TeamMember {
   role?: string;
   bio?: string;
   imgUrl?: string;
-  size?: number | 50;
+  size?: number;
 }
 
 interface TeamMemberProps {
@@ -36,9 +36,9 @@ export  function Team({
   return (
     <section className='p-2'>
       <div className='text-center mb-group space-y-4 p-2'>
-        <h2 className='text-5xl text-(--primary)'>{heading}</h2>
+        <h2 className='text-5xl text-(--text-primary)'>{heading}</h2>
         {subheading && (
-          <h4 className='uppercase text-2xl text-(--secondary)'>
+          <h4 className='uppercase text-2xl text-(--text-secondary)'>
             {subheading}
           </h4>
         )}
@@ -51,8 +51,8 @@ export  function Team({
                 className=' rounded-xl'
                 src={member.imgUrl}
                 alt={`portrait of ${member.name}`}
-                height={member.size}
-                width={member.size}
+                height={member.size || 50}
+                width={member.size || 50}
               />
             )}
             <h5 className='mt-2 text-2xl font-bold'>{member.name}</h5>

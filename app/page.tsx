@@ -10,7 +10,7 @@ const cards = [
   {
     id:1,
     title: "Tax Services",
-    subName: "Compliance, audits, debt relief, and strategic tax planning.",
+    subtitle: "Compliance, audits, debt relief, and strategic tax planning.",
     description: [
       "Income Tax Returns",
       "VAT Registration & Compliance",
@@ -23,7 +23,7 @@ const cards = [
   {
     id:2,
     title: "Accounting & Bookkeeping",
-    subName: "Accurate financial records and reporting for businesses.",
+    subtitle: "Accurate financial records and reporting for businesses.",
     description: [
       "Monthly Bookkeeping",
       "Bank Reconciliations",
@@ -36,7 +36,7 @@ const cards = [
   {
     id:3,
     title: "Corporate Secretarial & CIPC",
-    subName: "Company registrations, compliance, and governance support.",
+    subtitle: "Company registrations, compliance, and governance support.",
     description: [
       "Company/CC Registrations",
       "Annual Returns Filing",
@@ -49,7 +49,7 @@ const cards = [
   {
     id:4,
     title: "Audit & Assurance",
-    subName: "Statutory and forensic audits for transparency.",
+    subtitle: "Statutory and forensic audits for transparency.",
     description: [
       "Financial Statement Audits",
       "Trust Fund Audits",
@@ -62,7 +62,7 @@ const cards = [
   {
     id:5,
     title: "Payroll & HR Compliance",
-    subName: "End-to-end payroll processing and statutory reporting.",
+    subtitle: "End-to-end payroll processing and statutory reporting.",
     description: [
       "Salary Structuring",
       "PAYE/UIF/SDL Reporting",
@@ -75,7 +75,7 @@ const cards = [
   {
     id:6,
     title: "Specialized Services",
-    subName: "Tailored solutions for unique needs.",
+    subtitle: "Tailored solutions for unique needs.",
     description: [
       "BEE Certificates (Under R10M)",
       "Import/Export Licenses",
@@ -131,8 +131,6 @@ export default function Home() {
           title="AURORA"
           tagline="Enlighten your tax worries."
           ctas={ctas}
-          itemformat="btn"
-          listformat=""
         />
       </section>
       <section className="flex max-w-auto">

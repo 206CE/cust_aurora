@@ -39,7 +39,7 @@ export function Navigation({
   return (
     <nav className='relative'>
       {/* Desktop Menu */}
-      <div className='hidden md:flex items-center gap-4 text-4xl 2xl:text-7xl'>
+      <div className='hidden md:flex items-center gap-4 text-4xl '>
         {items.map((item) => (
           <span className='nav-link' key={item.label}>
             <NavItem item={item} />
@@ -130,7 +130,7 @@ function NavItem({
     <Link
       href={defaultHref}
       onClick={onNav}
-      className=' text-lg font-semibold text-(--text-primary) hover:text-blue-500 transition-colors'
+      className=''
     >
       {item.label}
     </Link>
